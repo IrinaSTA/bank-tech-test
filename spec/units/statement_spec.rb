@@ -2,9 +2,9 @@ require 'statement'
 
 describe 'Statement' do
   let(:transactions) do
-    [{ date: '10/01/2012', credit: 1000.00, debit: nil, balance: 1000.00 },
-     { date: '13/01/2012', credit: 2000.00, debit: nil, balance: 3000.00 },
-     { date: '14/01/2012', credit: nil, debit: 500.00, balance: 2500.00 }]
+    [{ date: '10/01/2012', credit: 1000.00, balance: 1000.00 },
+     { date: '13/01/2012', credit: 2000.00, balance: 3000.00 },
+     { date: '14/01/2012', debit: 500.00, balance: 2500.00 }]
   end
 
   it 'can generate a statement for an account' do

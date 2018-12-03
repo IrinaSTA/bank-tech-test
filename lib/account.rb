@@ -20,17 +20,9 @@ class Account
   private
 
   def record_transaction(amount, date, type)
-    if type == :credit
-      credit = amount.to_f
-      debit = nil
-    else
-      credit = nil
-      debit = amount.to_f
-    end
     @transactions.push(
       date: date,
-      credit: credit,
-      debit: debit,
+      type => amount,
       balance: @balance.to_f
     )
   end
