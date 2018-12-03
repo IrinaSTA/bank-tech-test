@@ -7,14 +7,18 @@ describe 'Account' do
     expect(account.balance).to eq(0)
   end
 
-  it 'can take a deposit on a specified date' do
-    account.deposit(1000, '10/01/2012')
+  it 'can record a deposit' do
+    time_now = Time.now
+    allow(Time).to receive(:now).and_return(time_now)
+    account.deposit(1000)
     expect(account.balance).to eq(1000)
   end
 
-  it 'can make a withdrawal on a specified date' do
-    account.deposit(1000, '10/01/2012')
-    account.withdraw(500, '14/01/2012')
+  it 'can record a withdrawal' do
+    time_now = Time.now
+    allow(Time).to receive(:now).and_return(time_now)
+    account.deposit(1000)
+    account.withdraw(500)
     expect(account.balance).to eq(500)
   end
 end

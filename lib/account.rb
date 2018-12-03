@@ -8,12 +8,12 @@ class Account
     @statement_generator = statement_generator
   end
 
-  def deposit(amount, date)
+  def deposit(amount, date = Time.now.to_i)
     increase_balance(amount)
     record_transaction(amount, date, :credit)
   end
 
-  def withdraw(amount, date)
+  def withdraw(amount, date = Time.now.to_i)
     decrease_balance(amount)
     record_transaction(amount, date, :debit)
   end
