@@ -2,9 +2,10 @@
 class Account
   attr_reader :balance
 
-  def initialize
+  def initialize(statement_generator = Statement)
     @balance = 0
     @transactions = []
+    @statement_generator = statement_generator
   end
 
   def deposit(amount, date)
@@ -15,6 +16,10 @@ class Account
   def withdraw(amount, date)
     decrease_balance(amount)
     record_transaction(amount, date, :debit)
+  end
+
+  def statement
+    @statement_generator.new(@transactions).display
   end
 
   private
