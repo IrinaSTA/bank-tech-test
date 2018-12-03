@@ -9,6 +9,7 @@ This is a simple bank account program. It allows the user:
 ## How to Run It
 
 - Fork and clone this repo
+- In the terminal, run ```bundle install``` from root directory
 - You can interact with the app from your terminal
 - In your terminal, run PRY or IRB. Here is what you can do:
 
@@ -27,6 +28,7 @@ This is a simple bank account program. It allows the user:
 I've designed two classes:
 - Account, which enables deposits and withdrawals and holds all transaction information as an array of hashes
 - Statement, which formats and displays an account statement
+- Both classes fulfil SRP
 
 ## Dependencies
 
