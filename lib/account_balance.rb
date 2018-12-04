@@ -1,6 +1,5 @@
 # Stores account balance
 class AccountBalance
-
   def initialize
     @balance = 0
   end
@@ -16,5 +15,4 @@ class AccountBalance
   def decrease(amount)
     @balance -= amount
   end
-
 end

@@ -21,12 +21,15 @@ This is a simple bank account program. It allows the user:
 
 - You should see something similar to this:
 
-![test_results](./public/test-results.jpg)
+![test_results](./public/test-results.png)
 
 ## My Approach
 
-I've designed three classes:
-- Account, which enables deposits and withdrawals and holds all transactions information as an array of hashes
+I've designed five classes:
+- Account, which holds transactions and provides a customer interface: deposit,
+  withdrawal, show_balance and statement methods
+- CreditTransaction - records transaction of type: credit
+- DebitTransaction - records transaction of type: debit
 - Balance, which enables updating of balance and holds current balance
 - Statement, which formats and displays an account statement
 
