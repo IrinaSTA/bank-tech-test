@@ -21,7 +21,7 @@ This is a simple bank account program. It allows the user:
 
 - You should see something similar to this:
 
-![test_results](./public/test-results.png)
+![test_results](./public/test-results.jpg)
 
 ## My Approach
 
