@@ -1,39 +1,38 @@
 # Formats and displays an account statement
 class Statement
-  def initialize(transactions)
-    @transactions = transactions
+  def initialize
   end
 
-  def display
-    header + body
+  def self.display(transactions)
+    header + body(transactions)
   end
 
   private
 
-  def header
+  def self.header
     "date || credit || debit || balance\n"
   end
 
-  def body
-    sorted_by_date.map { |transaction| format_line(transaction) }.join
+  def self.body(transactions)
+    sorted_by_date(transactions).map { |transaction| format_line(transaction) }.join
   end
 
-  def sorted_by_date
-    @transactions.sort { |a, b| b[:date] <=> a[:date] }
+  def self.sorted_by_date(transactions)
+    transactions.sort { |a, b| b[:date] <=> a[:date] }
   end
 
-  def format_line(transaction)
+  def self.format_line(transaction)
     "#{format_date(transaction[:date])} || " \
       "#{format_currency(transaction[:credit])} || " \
       "#{format_currency(transaction[:debit])} || " \
       "#{format_currency(transaction[:balance])}\n"
   end
 
-  def format_currency(amount)
+  def self.format_currency(amount)
     format(format('%.2f', amount)) if amount
   end
 
-  def format_date(timestamp)
+  def self.format_date(timestamp)
     Time.at(timestamp).strftime('%d/%m/%Y')
   end
 end

@@ -8,8 +8,7 @@ describe 'Statement' do
   end
 
   it 'can generate a statement for an account' do
-    statement = Statement.new(transactions)
-    expect(statement.display).to eq("date || credit || debit || balance\n" \
+    expect(Statement.display(transactions)).to eq("date || credit || debit || balance\n" \
       "03/12/2018 ||  || 500.00 || 2500.00\n" \
       "03/12/2018 || 2000.00 ||  || 3000.00\n" \
       "03/12/2018 || 1000.00 ||  || 1000.00\n")
