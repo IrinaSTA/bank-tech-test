@@ -1,7 +1,6 @@
 require 'account_balance'
 
 describe 'Account Balance' do
-
   let(:balance) { AccountBalance.new }
 
   it 'has a starting balance of 0' do
