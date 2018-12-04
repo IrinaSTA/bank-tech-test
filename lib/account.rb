@@ -19,7 +19,7 @@ class Account
   end
 
   def statement
-    @statement_generator.new(@transactions).display
+    @statement_generator.display(@transactions)
   end
 
   private
