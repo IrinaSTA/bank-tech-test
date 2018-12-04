@@ -19,16 +19,16 @@ This is a simple bank account program. It allows the user:
 
 - From the terminal, run: ```rspec spec --format documentation```
 
-- You should see this:
+- You should see something similar to this:
 
 ![test_results](./public/test-results.png)
 
 ## My Approach
 
-I've designed two classes:
-- Account, which enables deposits and withdrawals and holds all transaction information as an array of hashes
+I've designed three classes:
+- Account, which enables deposits and withdrawals and holds all transactions information as an array of hashes
+- Balance, which enables updating of balance and holds current balance
 - Statement, which formats and displays an account statement
-- Both classes fulfil SRP
 
 ## Dependencies
 
